@@ -7,8 +7,8 @@ module.exports = function solveEquation(equation) {
         C = parseInt(arr[2]);
 
   let D = Math.pow(B,2) - 4*A*C,
-      X1 = (-B - Math.sqrt(D)) / (2*A),
-      X2 = (-B + Math.sqrt(D)) / (2 * A);
+      X1 = Math.round((-B + Math.sqrt(D)) / (2 * A)),
+      X2 = Math.round((-B - Math.sqrt(D)) / (2 * A));
 
-  return [X1, X2];
+  return [X1, X2].sort( (a,b) => a - b );
 }
